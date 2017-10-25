@@ -1,7 +1,7 @@
 # scitran/nifti-montage
 #
 # Use SciTran Data lib to generate a montage from a NIfTI file
-# See http://github.com/scitran/data for source code.
+# See http://github.com/vistalab/data for source code.
 #
 
 FROM scitran/dcm-convert:v1.1.3

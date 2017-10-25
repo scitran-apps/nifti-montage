@@ -1,0 +1,28 @@
+#! /bin/bash
+#
+#
+FLYWHEEL_BASE=/flywheel/v0
+
+# Set paths
+OUTPUT_DIR=$FLYWHEEL_BASE/output
+INPUT_DIR=$FLYWHEEL_BASE/input/nifti
+
+# Look for input and run algorithm
+if [[ -z $@ ]]
+    then
+      input_file=`find $INPUT_DIR -type f -name "*.nii*" | head -1`
+      if [[ -n $input_file ]]
+        then
+          /flywheel/v0/nifti-montage.py "$input_file"
+          status=$?
+      else
+          echo "No inputs were provided and $INPUT_DIR has no valid input files!"
+          exit 1
+      fi
+else
+  # Do the work
+  $FLYWHEEL_BASE/nifti-montage.py $@
+  status=$?
+fi
+
+exit $status

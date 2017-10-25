@@ -1,0 +1,43 @@
+{
+  "name": "scitran-nifti-montage",
+  "label": "SciTran: NIfTI Montage Generation Tool",
+  "description": "NIfTI-Montage uses SciTran's data library (https://github.com/scitran/data) to generate a Montage from a NIfTI file.",
+  "maintainer": "Michael Perry <lmperry@stanford.edu>",
+  "author": "SciTran Team",
+  "url": "https://github.com/scitran/data",
+  "source": "https://github.com/scitran-apps/nifti-montage",
+  "license": "Apache-2.0",
+  "flywheel": "0",
+  "version": "1",
+  "custom": {
+    "docker-image": "scitran/nifti-montage:v1"
+  },
+  "config": {
+    "voxel_order": {
+      "description": "str [default 'LPS'] Three character string indicating the voxel order.",
+      "default": "LPS",
+      "type": "string"
+    },
+    "tile_size": {
+      "description": "int [default 256] Tilesize for generated zip or directory pyramid. Has no affect on montage_type 'png'.",
+      "default": 256,
+      "type": "int"
+    },
+    "montage_type": {
+      "description": "str [default 'zip'] Type of montage to create. can be 'zip', or 'png'.",
+      "default": "zip",
+      "type": "string"
+    }
+  },
+  "inputs": {
+    "nifti": {
+      "description": "NIfTI file",
+      "base": "file",
+      "type": {
+        "enum": [
+          "nifti"
+        ]
+      }
+    }
+  }
+}

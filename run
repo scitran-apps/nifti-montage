@@ -2,6 +2,7 @@
 #
 #
 FLYWHEEL_BASE=/flywheel/v0
+CONTAINER="[SCITRAN/nifti-montage]"
 
 # Set paths
 OUTPUT_DIR=$FLYWHEEL_BASE/output
@@ -23,6 +24,11 @@ else
   # Do the work
   $FLYWHEEL_BASE/nifti-montage.py $@
   status=$?
+fi
+
+if [[ $status != 0 ]]; then
+  echo "${CONTAINER}  Error detected! cleaning up..."
+  rm -f ${OUTPUT_DIR}/.metadata ${OUTPUT_DIR}/*.zip
 fi
 
 exit $status

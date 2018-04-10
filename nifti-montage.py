@@ -14,6 +14,8 @@ from PIL import Image
 logging.basicConfig()
 log = logging.getLogger('nifti-montage')
 
+Image.MAX_IMAGE_PIXELS = 1000000000
+
 def generate_montage(imagedata, timepoints=[], bits16=False):
     """Generate a montage."""
     # Figure out the image dimensions and make an appropriate montage.

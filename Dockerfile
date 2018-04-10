@@ -19,6 +19,7 @@ COPY run \
      ${FLYWHEEL}/
 
 run chmod +x nifti-montage.py
+run pip install --upgrade pillow
 
 # Set the entrypoint
 ENTRYPOINT ["/flywheel/v0/run"]

@@ -10,7 +10,34 @@
   "flywheel": "0",
   "version": "1.4.0",
   "custom": {
-    "docker-image": "scitran/nifti-montage:1.4.0"
+    "docker-image": "scitran/nifti-montage:1.4.0",
+    "gear-builder": {
+      "category": "utility"
+    },
+    "flywheel": {
+      "classification": {
+        "species": [
+          "Phantom",
+          "Human",
+          "Animal",
+          "Other"
+        ],
+        "organ": [
+          "Any"
+        ],
+        "therapeutic_area": [
+          "Any"
+        ],
+        "modality": [
+          "Any"
+        ],
+        "function": [
+          "Report",
+          "Quality Assurance"
+        ]
+      },
+      "suite": "Report"
+    }
   },
   "config": {
     "voxel_order": {

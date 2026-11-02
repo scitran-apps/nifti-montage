@@ -10,9 +10,9 @@
   "flywheel": "0",
   "version": "1.4.0",
   "custom": {
-    "docker-image": "scitran/nifti-montage:1.4.0",
     "gear-builder": {
-      "category": "utility"
+      "category": "utility",
+      "docker-image": "scitran/nifti-montage:1.4.0"
     },
     "flywheel": {
       "classification": {
